@@ -30,3 +30,22 @@ mylast [] = error "no empty list please!"
 mylast (x:xs)
   | xs == [] = x
   | otherwise = mylast xs
+
+mylength []     = 0
+mylength (_:xs) = 1 + mylength xs
+
+mynull []    = True
+mynull (_:_) = False 
+
+myreverse []     = []
+myreverse (x:xs) = myreverse xs ++ [x]
+
+mytake n [] = []
+mytake n (x:xs)
+  | n <= 0    = []
+  | otherwise = x:take (n-1) xs
+  
+mydrop n [] = []
+mydrop n (x:xs) 
+  | n <= 0    = (x:xs)
+  | otherwise = mydrop (n-1) xs
