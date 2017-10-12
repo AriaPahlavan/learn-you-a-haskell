@@ -49,3 +49,7 @@ mydrop n [] = []
 mydrop n (x:xs) 
   | n <= 0    = (x:xs)
   | otherwise = mydrop (n-1) xs
+
+myminimum [] = error "no empty list please!"
+myminimum [x] = x
+myminimum (x:xs) = x `min` (myminimum xs)
